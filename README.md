@@ -1,6 +1,7 @@
 # AllPaGPT
 
 > Author: [ChiHaoLu](https://chihaolu.me)([chihaolu.eth](https://chihaolu.eth.xyz))
+> 你可以考慮
 
 ## Warning!!!
 
@@ -23,8 +24,7 @@
 1. 選擇你的登入方式，跟使用 [ChatGPT](https://chat.openai.com/chat) 的登入過程一模一樣
 1. 點選 `Create new secret key`
 1. 輸入這把 Key 的名稱（任意），然後點選 `Create new secret key`
-1. 複製你的 **API**
-1. 進入[**AllPaGPT 網站**](https://all-pa-gpt.vercel.app/)
+1. **複製並妥善保存**你的 **API Key**
 
 ### 2. Download AllPaGPT-POC
 1. Preparing `node.js>=12`, you can download it in the [Official Website]().
@@ -55,7 +55,7 @@ $ node index.js
 ```
 √ What's your ChatGPT API Key ... asdfasdfasdfasefagevdvasdvasdfasdf
 ```
-4. Choose your source pdf:
+4. Give the absolute path to the target pdf:
 ```
 √ Where is your PDF location(e.g. "C:\Users\Bob\Downloads\Bob_HW1.pdf") ... C:\Users\Bob\Downloads\Bob_HW1.pdf
 ```
@@ -65,7 +65,7 @@ $ node index.js
 ```
 6. Choose the content length(every 500 words as a interval):
 ```
-√ Select the content length(every 500 words as a interval) » 0 ~ 500
+√ Select the content length(every 500 words as a interval) » 500 ~ 1000
 ```
 7. Give your target problems:
 ```
@@ -76,17 +76,16 @@ If you don't need to give more, you can enter "_end_" ... _end_
 ```
 √ Give your output file name ... Bob_hw1
 ```
-9. Produce the result:
-```
-TBD
-```
-
+9. Produce the result, you can find the output file(`.txt`) in the `output` folder.
 
 ---
 
 ## Appendix
 
-## Future Features Workflow
+### Helpful Info.
+1. 你可以在這裡看見你的[使用額度](https://platform.openai.com/account/usage)
+
+### Future Features Workflow
 1. ✅ 簽署同意協定
 2. ✅ 登入 + 輸入個人 API Key
 3. ⛔ 訓練常用口語：讀取個人過往報告或文章得到常用口語
