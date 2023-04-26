@@ -1,7 +1,8 @@
 # AllPaGPT
 
 > Author: [ChiHaoLu](https://chihaolu.me)([chihaolu.eth](https://chihaolu.eth.xyz))
-> 你可以考慮
+> 
+> 你可以考慮斗錢給我，或者按一個星星
 
 ## Warning!!!
 
@@ -27,7 +28,7 @@
 1. **複製並妥善保存**你的 **API Key**
 
 ### 2. Download AllPaGPT-POC
-1. Preparing `node.js>=12`, you can download it in the [Official Website]().
+1. Preparing `node.js>=15`, you can download it in the [Official Website](https://nodejs.org/zh-tw/download).
 2. Clone or Download the zip of the [AllPaGPT-POC](https://github.com/ChiHaoLu/AllPaGPT-POC) repository.
 3. Use the command-line or terminal to trigger the AllPaGPT-POC.
 4. Arrive the AllPaGPT-POC folder.
@@ -36,7 +37,7 @@ $ cd AllPaGPT-POC
 ```
 5. Initialization:
 ```
-$ npm install
+$ npm install # or yarn install
 ```
 
 ### Begin your journey
@@ -48,8 +49,8 @@ $ node index.js
 2. Signing the Agreements:
 ```
 √ 1. 我知道 ChatGPT 的服務有可能提供錯誤或過時資訊，我保證會自行勘誤並且對其提供的結果斟酌使用 ... yes
-√ 我知道使用這個服務，在某些國家、地區、機構、學院等任何時地情況下都有可能違反相關法律、命令、規則、約定，我保證會自行確認在 一切合規的情況下使用，且負擔一切責任 ... yes
-√ 我知道這個服務並不會收取我的任何費用，我使用的是自己的 API Key 的額度 ... yes
+√ 2. 我知道使用這個服務，在某些國家、地區、機構、學院等任何時地情況下都有可能違反相關法律、命令、規則、約定，我保證會自行確認在 一切合規的情況下使用，且負擔一切責任 ... yes
+√ 3. 我知道這個服務並不會收取我的任何費用，我使用的是自己的 API Key 的額度 ... yes
 ```
 3. Input your ChatGPT API Key(which you copy from [here](#1-preparing))
 ```
@@ -86,20 +87,23 @@ If you don't need to give more, you can enter "_end_" ... _end_
 1. 你可以在這裡看見你的[使用額度](https://platform.openai.com/account/usage)
 
 ### Future Features Workflow
-1. ✅ 簽署同意協定
-2. ✅ 登入 + 輸入個人 API Key
-3. ⛔ 訓練常用口語：讀取個人過往報告或文章得到常用口語
-4. 選擇來源
+- ✅ 簽署同意協定
+- ✅ 登入 + 輸入個人 API Key
+- 選擇來源
     - ✅ 讀取 PDF（包含論文、期刊、報告、簡報）
     - ⛔ 讀取 Youtube 影片（僅會將音源轉成文字，無法讀取影像內容）
-5. ✅ 選擇語言
-6. ✅ 選擇字數（每 500 字為區間）
-7. ✅ 選擇問題或輸入問題，得到相對應的內容
-8. ✅ 自動將上述問題梳理成流暢文字形成文章
-9. ⛔ 文法修正器（只支援英文與中文）
-10. 評分系統
+- ✅ 選擇語言
+- ✅ 選擇字數（每 500 字為區間）
+- ✅ 字數統計
+- ✅ 選擇問題或輸入問題，得到相對應的內容
+- ⛔ 訓練常用口語：讀取個人過往報告或文章得到常用口語
+- ⛔ 自動將上述問題梳理成流暢文字形成文章
+- ⛔ 文法修正器（只支援英文與中文）
+- 評分系統
     - ⛔ AI 生產程度
     - ⛔ 內容品質分數
+- ⛔ 顯示額度並且計算消耗額度
+- ⛔ 前端介面
 
 ### License
 
