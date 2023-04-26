@@ -1,8 +1,10 @@
 # AllPaGPT
 
 > Author: [ChiHaoLu](https://chihaolu.me)([chihaolu.eth](https://chihaolu.eth.xyz))
-> 
-> 你可以考慮斗錢給我，或者按一個星星
+
+1. 你可以考慮斗內 ETH 給我，或者按一個星星
+1. 我知道每一段接起來會很奇怪，但你有眼睛也有手，所以你可以解決
+1. 如果覺得難用就不要用，你可以發一個 issue 跟我建議程式碼怎麼改，或者直接 fork 寫更好的，但不接受跟我蝦逼逼說哪裡很怪
 
 ## Warning!!!
 
