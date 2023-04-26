@@ -1,0 +1,3 @@
+本文介紹了 XOR Linked List 這一種資料結構，與 Doubly Linked List 相比，它透過 XOR 操作將前一個節點的 address 和後一個節點的 address 合成一個 address，降低複雜度，並使得在任何一個節點都能方便地存取前後節點。這個特性也讓 XOR Linked List 除了節省空間外，也大幅提升了程式碼的執行效率。
+
+然而，XOR Linked List 也有缺點。因為我們沒有存其真實 address，Debug 變得很困難，可能造成動態記憶體釋放能力較弱，同時在實作上，我們必須轉換儲存的 address 之型態，因此程式碼的複雜度大幅增加。這些缺點顯示出，確
