@@ -109,7 +109,7 @@ async function main() {
             }],
         });
         let new_response = completion.data.choices[0].message.content
-        console.log(new_response)
+        // console.log(new_response)
 
         response = response.concat("\n", new_response)
         i < problemsArray.length ? i += 1 : j += 1
