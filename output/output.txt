@@ -1,0 +1,15 @@
+本文介紹了一種名為 XOR Linked List 的資料結構，其最大的優點在於省去了傳統 doubly linked list 中需要儲存前後節點地址的空間，並且可以讓任何一個節點都能夠方便地存取前後節點。
+
+在實作上，需要使用 XOR 運算將前一個節點地址和後一個節點地址合成一個地址，因此相關函數和方法的複雜度也和傳統 doubly linked list 有一些不同。除了一些操作時需要進行 traverse 時，時間複雜度為 O(n) 外，其他操作（如插入、刪除）的複雜度均為 O(1)。
+
+本文並提到 XOR Linked List 的缺點在於 debug 較為困難，因為無法儲存真實節點地址，並且程式碼複雜度會增加；此外，沒有
+本文主要介紹了 XOR Linked List 與 Doubly Linked List 的比較，以及如何透過 XOR 運算來降低複雜度。
+
+XOR Linked List 與 Doubly Linked List 相較，其主要利用 XOR 運算來節省空間或時間，但是仍能達到 Doubly Linked List 的效果。在任何一個節點都能方便地存取前後節點。XOR 全名為 Exclusive or（互斥或），是對兩個運算元的邏輯分析類型，比較特殊的是，當兩數值相同時為 false，也就是結果為 0，而數值不同時為 true。
+
+文章中也介紹了幾種在 XOR Linked List 中常見的 XOR 運算特性，包括交換律、恆等
+這次的期末報告我選擇了 XOR Linked List 這個資料結構，雖然和其他常見的 linked list 很相似，但是卻是透過 XOR 運算來降低複雜度，且可以省下空間。在實作上，也需要進行很多轉換型態的操作來處理地址，但這樣所犧牲的維護成本是必須要注意的。
+
+比較特別的是，我們可以透過 XOR Linked List 來達到 reverse 的功能，而且只需要 O(1) 的時間複雜度，這對於需要同時擁有效率和省空間的應用上是非常有幫助的。
+
+在比較 XOR Linked List 和 Doubly linked list 的時間複雜度時，兩者大致上是相同的，但是在需要做 traverse 的操作時，XOR 的時間複雜度就會比較吃虧；不過加上一個 tail

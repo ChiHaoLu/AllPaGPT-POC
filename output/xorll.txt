@@ -1,8 +1,0 @@
-從這篇論文中，我們可以學習到 XOR Linked List 這一個資料結構，以及使用 XOR 運算的技巧。相較於 Doubly linked list，XOR Linked List 可以透過 XOR 運算來降低複雜度，並且在任何一個節點都能方便地存取前後節點。在實作過程中，我們必須轉換儲存的 address 之型態，例如 long int 型態，以利後續操作，但程式碼的複雜度卻因此增加，造成程式碼維護的成本提高。
-
-XOR Linked List 的優點是節省空間或時間，卻能達到 Doubly linked list 的效果。但是 Debug 變得很困難，因為我們沒有存其真實 address，而且由於沒有儲存真實 address，可能造成動態記憶體釋放能力
-XOR Linked List 是一种数据结构，其通过 XOR 操作将前一个节点的 address 和后一个节点的 address 合成一个 address 来降低复杂度，并使得在任何一个节点都能方便地存取前后节点。相比于 Doubly linked list，其所具有的优点和缺点是什么呢？
-
-首先，XOR Linked List 建立在 XOR 运算的基础上。XOR 全名为 Exclusive or（互斥或），是对两个运算元的逻辑分析类型。比较特别的是，当两数值相同时为 false，也就是结果为 0，而数值不同时为 true。在 XOR Linked List 中，经常用到的有交换律、恒等律和归零律。
-
-XOR Linked List 的优点主要在于可以省下空间或时间，并且能够达到 Doubly linked list 的效果。而其缺点则在于 Debug 变得很困

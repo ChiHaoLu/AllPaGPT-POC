@@ -2,7 +2,7 @@
 
 > Author: [ChiHaoLu](https://chihaolu.me)([chihaolu.eth](https://chihaolu.eth.xyz))
 
-1. 你可以考慮斗內 ETH 給我，或者按一個星星
+1. 你可以考慮 donate ETH 給我，或者按一個星星
 1. 我知道每一段接起來會很奇怪，但你有眼睛也有手，所以你可以解決
 1. 如果覺得難用就不要用，你可以發一個 issue 跟我建議程式碼怎麼改，或者直接 fork 寫更好的，但不接受跟我蝦逼逼說哪裡很怪
 1. 如果照著文件走你跑不起來（如果你是一個完全不會寫程式的人）或卡在某些地方，可以寄信給我: `qazwsxeric@gmail.com`

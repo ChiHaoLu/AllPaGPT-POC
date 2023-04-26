@@ -1,8 +1,8 @@
 import * as fs from 'fs'
-import path from "path";
 import { Configuration, OpenAIApi } from "openai";
 import * as prompting from "./lib/prompting.js"
 import { loadPDFContext } from "./lib/parsePDF.js"
+import { chat } from "./lib/chatGPT.js"
 
 async function main() {
 
@@ -55,65 +55,62 @@ async function main() {
     const content0 = `
     You should be a student around 25 years old with higher education.
     Here is the contents, please read it and raise 5 valuable questions in ${language}.:
-    \n"${pdfText}"
+    \n ${pdfText}
     `
 
     // Produce the content
     console.log("\nPlease wait for AllPaGPT...")
-    let completion = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{
-            role: role, content: content0
-        }],
-    });
+
+    let completion = await chat(openai, role, content0)
     let problems0 = completion.data.choices[0].message.content.split(/\r?\n/)
+    console.log("Valuable Questions:")
+    console.log(problems0)
 
     const content1 = `
         I would like you to write a reflection using approximately ${length - 500} to ${length} words in ${language}. 
         You should be a student around 25 years old with higher education.
         Here is the contents, please read it and write the reflection with above instructions: 
-        \n "${pdfText}"`
+        \n ${pdfText}`
 
-    completion = await openai.createChatCompletion({
-        model: "gpt-3.5-turbo",
-        messages: [{
-            role: role, content: content1
-        }],
-    });
+    completion = await chat(openai, role, content1) 
     let response = completion.data.choices[0].message.content
 
     let i = 0
     let j = 0
-    while (getWordCount(response, language) < length - 50) {
+    while (getWordCount(response, language) < length - 500) {
         if (j >= problems0.length) break
         const content = i < problemsArray.length
             ?
-            `I would like you to write a reflection using approximately ${length - 500} to ${length} words in ${language}. 
+            `I would like you to write a reflection using approximately ${length - 500} to ${length - 300} words in ${language}. 
         You should be a student around 25 years old with higher education. 
         Please give reflection focus on the following questions:
         ${problemsArray[i]}
         Here is the contents, please read it and write the reflection with above instructions: 
-        \n "${pdfText}"`
+        \n ${pdfText}`
             :
-            `I would like you to write a reflection using approximately ${length - 500} to ${length} words in ${language}. 
+            `I would like you to write a reflection using approximately ${length - 500} to ${length - 300} words in ${language}. 
         You should be a student around 25 years old with higher education. 
         Please give reflection focus on the following questions:
         ${problems0[j]}
         Here is the contents, please read it and write the reflection with above instructions: 
-        \n "${pdfText}"`
+        \n ${pdfText}`
 
-        completion = await openai.createChatCompletion({
-            model: "gpt-3.5-turbo",
-            messages: [{
-                role: role, content: content
-            }],
-        });
+        completion = await chat(openai, role, content) 
         let new_response = completion.data.choices[0].message.content
-        // console.log(new_response)
 
         response = response.concat("\n", new_response)
         i < problemsArray.length ? i += 1 : j += 1
     }
+
+    const content = `
+        I would like you to write a reflection using approximately ${length - 500} to ${length} words in ${language}. 
+        You should be a student around 25 years old with higher education.
+        Here is the contents, please read it and write a conclusion of a reflection with above instructions: 
+        \n ${pdfText}`
+    completion = await chat(openai, role, content)
+    let new_response = completion.data.choices[0].message.content
+    response = response.concat("\n", new_response)
+
     console.log(response);
 
     // Save the final result
